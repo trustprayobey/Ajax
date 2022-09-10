@@ -1,0 +1,1 @@
+console.log('Time to put the xml in ECMAScript')
