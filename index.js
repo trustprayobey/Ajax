@@ -38,18 +38,25 @@ function loadText(){
 
     console.log('READYSTATE: ',xhr.readyState)
 
-    //OPTIONAL - Used for loaders
-    xhr.onprogress = function(){
+    // //OPTIONAL - Used for loaders
+    // xhr.onprogress = function(){
+    //     console.log('READYSTATE: ',xhr.readyState)
+    // }
+
+    xhr.onload = function(){
         console.log('READYSTATE: ',xhr.readyState)
+        if(xhr.status == 200){
+            console.log(this.responseText)
+        }
+        //Onload has to be ready to  work
+    }
+    //Incase something goes south
+
+    xhr.onerror = function(){
+        console.log('ERROR')
     }
 
-    // xhr.onload = function(){
-    //     console.log('READYSTATE: ',xhr.readyState)
-    //     if(xhr.status == 200){
-    //         console.log(this.responseText)
-    //     }
-    //     //Onload has to be ready to  work
-    // }
+    //
 
     //Instead of using the onload
     // xhr.onreadystatechange = function(){
