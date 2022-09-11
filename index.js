@@ -38,18 +38,21 @@ function loadText(){
 
     console.log('READYSTATE: ',xhr.readyState)
 
-    // xhr.onload = function(){
-    //     if(xhr.status == 200){
-    //         console.log(this.responseText)
-    //     }
-    // }
-
-    //Instead of using the onload
-    xhr.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status == 200){
+    xhr.onload = function(){
+        console.log('READYSTATE: ',xhr.readyState)
+        if(xhr.status == 200){
             console.log(this.responseText)
         }
     }
+
+    //Instead of using the onload
+    // xhr.onreadystatechange = function(){
+    //     //Unlike onload this goes 1234
+    //     console.log('READYSTATE: ',xhr.readyState)
+    //     if(this.readyState == 4 && this.status == 200){
+    //         console.log(this.responseText)
+    //     }
+    // }
 
     //ready state values are:
     //0 - request not intialized
