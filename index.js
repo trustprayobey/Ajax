@@ -29,10 +29,24 @@ Node HTTP(using node js)
 */
 
 
-// document.getElementById('button').addEventListener('click', loadText)
-// function loadText(){
-//     console.log('Hello')
-//     //Creating the xhr object here
-//     var xhr = new XMLHttpRequest()
+document.getElementById('button').addEventListener('click', loadText)
+function loadText(){
+    //Creating the xhr object here
+    var xhr = new XMLHttpRequest()
+    //OPEN type url asyn or not
+    xhr.open('GET','sample.txt',true)
+
+    xhr.onload = function(){
+        if(xhr.status == 200){
+            console.log(this.responseText)
+        }
+    }
+    //sends request
+    xhr.send()
+
+    //HTTP Statuses
+    //200 means okay
+    //404 means not found
+    //403 means forbidden
     
-// }
+}
