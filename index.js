@@ -27,3 +27,12 @@ FetchAPI(part of the browser)
 Prototype
 Node HTTP(using node js)
 */
+
+
+// document.getElementById('button').addEventListener('click', loadText)
+// function loadText(){
+//     console.log('Hello')
+//     //Creating the xhr object here
+//     var xhr = new XMLHttpRequest()
+    
+// }
