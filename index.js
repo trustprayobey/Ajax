@@ -46,7 +46,8 @@ function loadText(){
     xhr.onload = function(){
         console.log('READYSTATE: ',xhr.readyState)
         if(xhr.status == 200){
-            console.log(this.responseText)
+            // console.log(this.responseText)
+            document.getElementById('text').innerHTML = this.responseText
         }
         //Onload has to be ready to  work
     }
