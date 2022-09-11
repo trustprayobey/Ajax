@@ -36,6 +36,8 @@ function loadText(){
     //OPEN type url asyn or not
     xhr.open('GET','sample.txt',true)
 
+    console.log('READYSTATE: ',xhr.readyState)
+
     // xhr.onload = function(){
     //     if(xhr.status == 200){
     //         console.log(this.responseText)
