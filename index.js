@@ -27,10 +27,3 @@ FetchAPI(part of the browser)
 Prototype
 Node HTTP(using node js)
 */
-
-
-
-
-
-
-
