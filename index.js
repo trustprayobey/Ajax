@@ -49,6 +49,9 @@ function loadText(){
             // console.log(this.responseText)
             document.getElementById('text').innerHTML = this.responseText
         }
+        else if (xhr.status == 404){
+            document.getElementById('text').innerHTML = 'Not Found'
+        }
         //Onload has to be ready to  work
     }
     //Incase something goes south
