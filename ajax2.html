@@ -21,7 +21,19 @@
             let xhr = new XMLHttpRequest()
             xhr.open('GET','user.json',true)
             xhr.onload = function(){
-                if(this.status == 200){console.log(this.responseText)}
+                if(this.status == 200){
+                    // console.log(this.responseText) //Or
+                    let cow = JSON.parse(this.responseText)
+                    console.log(cow.name) //and so on
+
+                    var output = ''
+                    output += '<ul>'+
+                        '<li>'+cow.id+'</li>'+
+                        '<li>'+cow.name+'</li>'+
+                        '<li>'+cow.email+'</li>'+
+                        '</ul>'
+                        document.getElementById('user').innerHTML = output
+                }
             }
             xhr.send()
             
