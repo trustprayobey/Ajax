@@ -17,6 +17,7 @@
 
     <script>
         document.getElementById('button1'),addEventListener('click', Loaduser)
+        document.getElementById('button2'),addEventListener('click', Loadusers)
         function Loaduser(){
             let xhr = new XMLHttpRequest()
             xhr.open('GET','user.json',true)
@@ -38,6 +39,27 @@
             xhr.send()
             
         }
+
+        function Loadusers(){
+            let xhr = new XMLHttpRequest()
+            xhr.open('GET','users.json',true)
+            xhr.onload = function(){
+                if(this.status == 200){
+                    let cows = JSON.parse(this.responseText)
+                    var output = ''
+                    for( var i in cows){
+                    output += '<ul>'+
+                        '<li>'+cows[i].id+'</li>'+
+                        '<li>'+cows[i].name+'</li>'+
+                        '<li>'+cows[i].email+'</li>'+
+                        '</ul>'
+                    }
+                        document.getElementById('users').innerHTML = output
+                }
+        }
+            xhr.send()
+    
+    }
     </script>
 </body>
 </html>
